@@ -1,5 +1,5 @@
 package com.urqa.TrailBlazers.Generic;
 
-public class GenericMethods {
+public class WaitStatementLib {
 
 }
