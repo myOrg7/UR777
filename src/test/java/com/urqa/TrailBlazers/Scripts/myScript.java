@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidDriver;
 public class myScript {
 	public static void main(String [] args){
 		AndroidDriver driver = null;
-		
+		String url ="http://0.0.0.0:4723/wd/hub";
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability("automationName", "UiAutomator2");
 		dc.setCapability("platformName", "Android");
@@ -23,7 +23,7 @@ public class myScript {
 		dc.setCapability("noReset", true);
 		
 		try {
-			driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), dc);
+			driver = new AndroidDriver<MobileElement>(new URL(url), dc);
 		} catch (MalformedURLException e){
 			e.printStackTrace();
 		}
