@@ -9,9 +9,9 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
-public class myScript {
+public class Test {
 	public static void main(String [] args){
-		AndroidDriver driver = null;
+		AndroidDriver d = null;
 		String url ="http://0.0.0.0:4723/wd/hub";
 		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setCapability("automationName", "UiAutomator2");
@@ -21,13 +21,21 @@ public class myScript {
 		dc.setCapability("appPackage", "trailBlaze.com.trailBlaze");
 		dc.setCapability("appActivity", "trailBlaze.com.trailBlaze.Ui.Authentication.Activities.SplashActivity");
 		dc.setCapability("noReset", true);
-		
 		try {
-			driver = new AndroidDriver<MobileElement>(new URL(url), dc);
+			d = new AndroidDriver<MobileElement>(new URL(url), dc);
 		} catch (MalformedURLException e){
 			e.printStackTrace();
 		}
 		
-		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		d.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		d.findElementByXPath("//android.widget.EditText[@text='xyz123']").sendKeys("108509");
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		//d.findElementByXPath("//android.widget.EditText[@index='1']").sendKeys("108509");
+		d.findElementById("trailBlaze.com.trailBlaze:id/et_password").sendKeys("108509");
+		d.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		//d.findElementById("trailBlaze.com.trailBlaze:id/btn_submit").click();
+		d.findElementByXPath("//android.widget.ImageButton[@index='3']").click();
+		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		d.closeApp();
 	}
 }
