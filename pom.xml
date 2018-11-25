@@ -43,7 +43,11 @@
     	<artifactId>java-client</artifactId>
     	<version>4.1.2</version>
 	</dependency>
-    
+    <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-testng</artifactId>
+            <version>3.0.0-M1</version>
+          </dependency>
     <dependency>
     	<groupId>org.apache.poi</groupId>
     	<artifactId>poi</artifactId>
