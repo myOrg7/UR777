@@ -36,6 +36,6 @@ public class Test {
 		//d.findElementById("trailBlaze.com.trailBlaze:id/btn_submit").click();
 		d.findElementByXPath("//android.widget.ImageButton[@index='3']").click();
 		d.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		d.closeApp();
+		d.closeApp(); // closing the app
 	}
 }
